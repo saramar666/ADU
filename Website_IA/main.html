@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Persona Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="rect"></div>
+        <!-- Navbar -->
+        <nav class="navbar">
+            
+            <div class="nav-item">
+                <span>TEXT SIZE</span>
+                <div class="button-group">
+                    <button onclick="changeTextSize(-0.1)" aria-label="Decrease text size"><img src="Images/dash-lg.svg"
+                            alt="Minus Icon"></button>
+                    <button onclick="changeTextSize(0.1)" aria-label="Increase text size"><img src="Images/plus-lg.svg"
+                            alt="Plus Icon"></button>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <span>TEXT SPACING</span>
+                <div class="button-group">
+                    <button onclick="changeTextSpacing(-0.1)" aria-label="Decrease text spacing"><img
+                            src="Images/dash-lg.svg" alt="Minus Icon"></button>
+                    <button onclick="changeTextSpacing(0.1)" aria-label="Increase text size"><img
+                            src="Images/plus-lg.svg" alt="Plus icon"></button>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <span>AUDIO</span>
+                <div class="popup-container" id="audioContainer">
+                    <!-- <button onclick="toggleAudioDropdown()" id="audioButton"><img src="Images/play-lg.svg"
+                            alt="Audio Icon"></button> -->
+                            <button id="audioButton"><img src="Images/play-lg.svg" alt="Audio Icon"></button>
+
+                    <div id="myPopup" class="popup-content">
+                        <span> SPEED</span>
+                        <div class="speed-control">
+                            <label for="speedSlider" class="speed-label">Value: <span id="speedValue">1x</span></label>
+                            <input 
+                                type="range" 
+                                id="speedSlider" 
+                                class="speed-slider"
+                                min="0.5" 
+                                max="2" 
+                                step="0.1" 
+                                value="1"
+                                aria-label="Adjust reading speed">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <span>CONTRAST</span>
+                <div class="button-group">
+                    <button onclick="toggleContrast()" id="contrastButton" aria-label="Invert colors"><img
+                            src="Images/sun-lg.svg" alt="Contrast Icon"></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- <div class="image-placeholder" aria-hidden="true"></div>  -->
+        <div class="pc-img">
+            <img src="Images/ImagePC.png" width=100% alt="Persona Card Image">
+        </div>
+
+        <div class="content">
+            <h1>Global Citizen<br>with <span style="color: #186DF7">Low Vision</span></h1>
+            <p id="textToRead">
+                These days, Singapore is a center of the world, and Vishnu is one of its global citizens. After
+                graduating from one of India’s technology colleges, he went to a postgraduate program at the National
+                University of Malaysia. His work on visualizing data landed him a job with a multinational medical
+                technology company.
+
+                Vishnu was diagnosed with glaucoma and his eyes have been getting steadily worse, despite treatment. He
+                can adjust his monitor and his phone, but many of the technical programs he uses don’t have many
+                options, so he has started using a screen magnifier and high-contrast mode. He has several mobile
+                phones. One connects him to his family in India, one is for work, and one is for personal use. He’s
+                lucky to have good bandwidth at home and at work. Some of his colleagues from the university live in
+                places with much more erratic connections. Even so, downloading large pages from European or U.S.
+                servers can be slow.
+
+                But, if he had one wish, it would be that people would write technical papers and websites more clearly.
+                His English is good, but idiomatic expressions can still be hard.
+            </p>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
