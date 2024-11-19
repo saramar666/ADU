@@ -1,6 +1,6 @@
 let currentFontSize = 1.5;
 let currentLineHeight = 1.5;
-const textElement = document.getElementById("persona-text");
+const textElement = document.getElementById("textToRead");
 const audioButton = document.getElementById("audioButton");
 const contrastButton = document.getElementById("contrastButton");
 const textToRead = document.getElementById('textToRead'); // passei
@@ -142,6 +142,18 @@ speedSlider.addEventListener('input', updateSpeed);
 // Initialize speed display
 updateSpeed();
 
+function restartAudio() {
+    // Cancel any ongoing speech
+    speechSynthesis.cancel();
+    
+    // Create a new utterance starting from the beginning
+    currentUtterance = createUtterance(currentText, 0);
+    currentUtterance.startTime = Date.now();
+    
+    // Start speaking from the beginning
+    speechSynthesis.speak(currentUtterance);
+}
+document.getElementById('restartAudioButton').addEventListener('click', restartAudio);
 
 function toggleContrast() {
     if (isHighContrast) {

@@ -8,10 +8,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.accent {
-    accent-color: red;
+a.hidden {
+ display:none;
 }
-
 .rect{
     width:100%;
     height: 4rem;
@@ -141,17 +140,22 @@ button:focus, .button-group button:focus {
     margin-top: 1rem;
 }
 
+.popup-content button {
+        margin-bottom: 1.4rem;
+        background-color: white;
+        border: 1px solid #186DF7;
+        border-width:0.2rem;
+        margin-top:0.5rem;
+}
 .speed-control {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
-
 .speed-slider {
     flex-grow: 1;
 }
-
 .speed-label {
     font-size: 1.2rem;
 }
@@ -194,19 +198,53 @@ p {
     color: white;
 }
 
-.high-contrast .navbar {
+.high-contrast .navbar { /* nav background */
     background-color: #333;
 }
-
-.high-contrast .navbar button {
-    background-color: #555;
-    color: white;
-}
-
+.high-contrast .navbar button { /* buttons (squre and icon */
+    -webkit-filter: invert(1);
+        filter: invert(1);
+} 
 .high-contrast .image-placeholder {
     background-color: #666;
 }
+.high-contrast .rect { 
+    background-color:#000000;
+}
+.high-contrast .content h1 span{ /* Low Vision */
+    -webkit-filter: invert(1);
+        filter: invert(1);
+} 
 
+/*
+.high-contrast .popup-content button {
+    -webkit-filter: invert(1);
+        filter: invert(1);
+    
+}
+/* High Contrast Mode for Popup Container  */
+.high-contrast .popup-content,
+.high-contrast .popup-content * {
+    background-color: black !important;
+    color: white !important;
+}
+
+.high-contrast .speed-control {
+    background-color: black !important;
+    color: white !important;
+}
+
+.high-contrast .speed-control span,
+.high-contrast .speed-control label,
+.high-contrast .speed-control #speedValue {
+    color: white !important;
+}
+
+.high-contrast .speed-slider {
+    filter: invert(1);
+}
+
+        
 .pc-img {
    position: fixed;
    min-width: 450px;
